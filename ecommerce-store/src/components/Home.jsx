@@ -5,7 +5,6 @@ import games from "../games";
 const Home = () => {
   return (
     <div>
-      <h1 className="text-3xl font-semibold mb-4">Video Game Store</h1>
       <div className="grid grid-cols-2 gap-4 w-100">
         {games.map((game) => (
           <div key={game.id} className="border p-4">
