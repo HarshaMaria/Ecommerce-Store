@@ -2,8 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./components/Home";
 import GameDetails from "./components/GameDetails";
-import LoginForm from './components/LoginForm';
+import AddProductForm from "./components/AddProductForm";
 import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
 import "./index.css";
 
 const App = () => {
@@ -14,8 +15,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/game/:id" element={<GameDetails />} />
-          <Route path="/LoginForm" element={<LoginForm />} />
-          <Route path="/cart" element={<Cart />} />         
+          {/* <Route path="/LoginForm" element={<LoginForm />} /> */}
+          <Route path="/add-product" element={<AddProductForm />} />
+          <Route path="/cart" element={<Cart />} />      
+          <Route path="/checkout" element={<Checkout />} />   
         </Routes>
       </div>
     </Router>

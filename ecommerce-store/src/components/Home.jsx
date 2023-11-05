@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import games from "../games";
-import LoginForm from './components/LoginForm';
+import { useSelector } from "react-redux";
+// import games from "../games";
+// import LoginForm from './components/LoginForm';
 
 const Home = () => {
+  const games = useSelector((state) => state.games);
   return (
     <div className="grid grid-cols-2 gap-4">
       {games.map((game) => (

@@ -30,7 +30,11 @@ const Cart = () => {
         </ul>
       )}
       {cartItems.length > 0 && (
-        <button onClick={handleClearCart}>Clear Cart</button>
+      <div>
+       <p>Total: ${cartItems.reduce((total, item) => total + item.price, 0)}</p>
+       <button onClick={handleClearCart}>Clear Cart</button>
+        <button>Proceed to Payment</button>
+      </div>
       )}
     </div>
   );

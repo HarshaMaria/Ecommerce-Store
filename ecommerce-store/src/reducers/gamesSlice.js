@@ -7,7 +7,6 @@ const gamesSlice = createSlice({
     addNewGame: (state, action) => {
       state.push(action.payload);
     },
-    // ... other reducers ...
   },
 });
 
