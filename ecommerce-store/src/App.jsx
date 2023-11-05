@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./components/Home";
 import GameDetails from "./components/GameDetails";
+import LoginForm from './components/LoginForm';
 import Cart from "./components/Cart";
 import "./index.css";
 
@@ -13,7 +14,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/game/:id" element={<GameDetails />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/LoginForm" element={<LoginForm />} />
+          <Route path="/cart" element={<Cart />} />         
         </Routes>
       </div>
     </Router>

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import games from "../games";
+import LoginForm from './components/LoginForm';
 
 const Home = () => {
   return (
