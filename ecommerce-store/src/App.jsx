@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
+import LoginForm from "./components/LoginForm";
 import Home from "./components/Home";
 import GameDetails from "./components/GameDetails";
 import AddProductForm from "./components/AddProductForm";
@@ -15,7 +16,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/game/:id" element={<GameDetails />} />
-          {/* <Route path="/LoginForm" element={<LoginForm />} /> */}
+          <Route path="/LoginForm" element={<LoginForm />} />
           <Route path="/add-product" element={<AddProductForm />} />
           <Route path="/cart" element={<Cart />} />      
           <Route path="/checkout" element={<Checkout />} />   

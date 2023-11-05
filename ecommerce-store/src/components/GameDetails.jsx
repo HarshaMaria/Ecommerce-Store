@@ -1,8 +1,8 @@
 import React from 'react';
-import { useParams,usePa } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../reducers/cartSlice';
-// import games from '../games';
+import games from '../games';
 
 const GameDetails = () => {
   const { id } = useParams();
