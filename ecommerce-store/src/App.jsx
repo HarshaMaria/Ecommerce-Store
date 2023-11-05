@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
-import LoginForm from "./components/LoginForm";
 import Home from "./components/Home";
+import LoginForm from "./components/LoginForm";
 import GameDetails from "./components/GameDetails";
 import AddProductForm from "./components/AddProductForm";
 import Cart from "./components/Cart";

@@ -16,7 +16,7 @@ const Cart = () => {
 
   return (
     <div>
-      <h2>Your Shopping Cart</h2>
+      <h2>Your Cart</h2>
       {cartItems.length === 0 ? (
         <p>Your cart is empty.</p>
       ) : (
@@ -30,11 +30,7 @@ const Cart = () => {
         </ul>
       )}
       {cartItems.length > 0 && (
-      <div>
-       <p>Total: ${cartItems.reduce((total, item) => total + item.price, 0)}</p>
-       <button onClick={handleClearCart}>Clear Cart</button>
-        <button>Proceed to Payment</button>
-      </div>
+        <button onClick={handleClearCart}>Clear Cart</button>
       )}
     </div>
   );

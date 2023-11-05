@@ -1,4 +1,4 @@
-
+// src/components/Checkout.js
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearCart } from '../reducers/cartSlice';

@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../reducers/userSlice';
-import { useHistory } from 'react-router-dom';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -21,10 +19,7 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can add your authentication logic here, for example, make an API call to validate the user.
-    // For simplicity, let's assume any email and password combination is valid for now.
     dispatch(loginUser(formData));
-    history.push('/');
   };
 
   return (

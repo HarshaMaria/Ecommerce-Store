@@ -7,7 +7,6 @@ import games from '../games';
 const GameDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const games = useSelector((state) => state.games);
   const game = games.find((game) => game.id === parseInt(id));
 
   if (!game) {
