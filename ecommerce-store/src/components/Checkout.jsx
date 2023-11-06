@@ -164,7 +164,7 @@ const Checkout = () => {
               CVV:
               <input type="text" name="cvv" value={paymentDetails.cvv} onChange={handlePaymentInputChange} />
             </label>
-            <button type="submit" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2">
+            <button type="submit" className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4 flex">
               Submit Payment
             </button>
           </form>
