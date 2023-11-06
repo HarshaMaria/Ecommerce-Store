@@ -21,7 +21,14 @@ const Cart = () => {
     <div>
       <h2 className="text-4xl font-bold mb-4">Your Shopping Cart</h2>
       {cartItems.length === 0 ? (
+        <div>
         <p>Your Shopping cart is empty.</p>
+        <Link to="/home">
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">
+            Back to Home
+          </button>
+        </Link>
+      </div>
       ) : (
         <div>
           <ul>
