@@ -14,9 +14,9 @@ const App = () => {
       <div className="container mx-auto p-4">
       <h1 className="text-4xl font-bold mb-4 text-center">Video Game Store</h1>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<LoginForm />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/game/:id" element={<GameDetails />} />
-          <Route path="/LoginForm" element={<LoginForm />} />
           <Route path="/add-product" element={<AddProductForm />} />
           <Route path="/cart" element={<Cart />} />      
           <Route path="/checkout" element={<Checkout />} />   
