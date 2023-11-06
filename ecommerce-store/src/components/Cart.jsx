@@ -27,12 +27,13 @@ const Cart = () => {
             {cartItems.map(item => (
               <li key={item.id}>
                 {item.name} - ${item.price}
-                <button onClick={() => handleRemoveFromCart(item)}>Remove</button>
+                <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-4 ml-4" onClick={() => handleRemoveFromCart(item)}>Remove</button>
               </li>
             ))}
           </ul>
           <p className="text-xl font-semibold mt-4">Total Price: ${total}</p>
-          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2" onClick={handleClearCart}>Clear Cart</button>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2" onClick={handleClearCart}>Clear Cart</button>
+          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2 flex">Proceed to Checkout</button>
         </div>
       )}
     </div>
