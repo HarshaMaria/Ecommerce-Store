@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, clearCart } from '../reducers/cartSlice';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const cartItems = useSelector(state => state.cart);
@@ -33,7 +34,9 @@ const Cart = () => {
           </ul>
           <p className="text-xl font-semibold mt-4">Total Price: ${total}</p>
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2" onClick={handleClearCart}>Clear Cart</button>
+          <Link to="/checkout">
           <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2 flex">Proceed to Checkout</button>
+          </Link>
         </div>
       )}
     </div>
