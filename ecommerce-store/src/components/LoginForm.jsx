@@ -9,6 +9,7 @@ const LoginForm = () => {
     email: '',
     password: '',
   });
+  const [isFormValid, setIsFormValid] = useState(true);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,7 +21,18 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(loginUser(formData));
+
+    // Validate the form fields
+    if (formData.email.trim() === '' || formData.password.trim() === '') {
+      setIsFormValid(false);
+    } else {
+      setIsFormValid(true);
+      // If all fields are filled, dispatch loginUser action and navigate to home page
+      dispatch(loginUser(formData));
+      // Navigate to the home page (assuming you have a route defined for '/home')
+      // You can replace '/home' with the actual path of your home page route
+      // For example: history.push('/home');
+    }
   };
 
   return (
@@ -49,6 +61,7 @@ const LoginForm = () => {
             required
           />
         </div>
+        {!isFormValid && <p className="text-red-500 mb-4">Please fill in all fields.</p>}
         <Link to="/home">
         <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           Login

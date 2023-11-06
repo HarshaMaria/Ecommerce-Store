@@ -110,8 +110,6 @@ const Checkout = () => {
 
   const handlePaymentSubmit = (e) => {
     e.preventDefault();
-    // Perform payment processing logic here
-    // For simplicity, let's consider payment is successful if card number is not empty
     if (paymentDetails.cardNumber) {
       setPaymentSuccess(true);
       handleClearCart();
@@ -122,7 +120,7 @@ const Checkout = () => {
 
   return (
     <div className="border p-4">
-      <h2 className="text-2xl font-semibold mb-4">Checkout</h2>
+      <h2 className="text-4xl font-bold mb-4">Checkout</h2>
       {!paymentSuccess ? (
         <div>
           <h3 className="text-xl font-semibold mb-2">User Information:</h3>
@@ -170,7 +168,7 @@ const Checkout = () => {
           </form>
         </div>
       ) : (
-        <p>Payment successful! Thank you, {userInfo.name}, for your purchase.</p>
+        <p className="text-2xl font-semibold mb-4">Payment successful! Thank you for your purchase.</p>
       )}
     </div>
   );

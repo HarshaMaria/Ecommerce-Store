@@ -16,9 +16,9 @@ const Cart = () => {
 
   return (
     <div>
-      <h2>Your Cart</h2>
+      <h2 className="text-4xl font-bold mb-4">Your Shopping Cart</h2>
       {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p>Your Shopping cart is empty.</p>
       ) : (
         <ul>
           {cartItems.map(item => (
@@ -30,7 +30,7 @@ const Cart = () => {
         </ul>
       )}
       {cartItems.length > 0 && (
-        <button onClick={handleClearCart}>Clear Cart</button>
+        <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-4" onClick={handleClearCart}>Clear Cart</button>
       )}
     </div>
   );
