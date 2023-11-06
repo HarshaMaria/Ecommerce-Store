@@ -30,7 +30,7 @@ const GameDetails = () => {
       <img src={game.imageUrl} alt={game.name} className="mb-2 w-64 h-64 object-cover" />
       <p className="text-gray-700 mb-2">{game.description}</p>
       <p className="text-gray-700">Price: ${game.price}</p>
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2" onClick={handleAddToCart}>
+      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2 flex" onClick={handleAddToCart}>
         Add to Cart
       </button>
       <Link to="/checkout">
