@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
-import Home from "./components/Home";
 import LoginForm from "./components/LoginForm";
+import Home from "./components/Home";
 import GameDetails from "./components/GameDetails";
-import AddProductForm from "./components/AddProductForm";
 import Cart from "./components/Cart";
+import AddProductForm from "./components/AddProductForm";
 import Checkout from "./components/Checkout";
 import "./index.css";
 
