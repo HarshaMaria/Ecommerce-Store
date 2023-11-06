@@ -33,8 +33,13 @@ const GameDetails = () => {
       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2 flex" onClick={handleAddToCart}>
         Add to Cart
       </button>
+      <Link to="/Cart">
+      <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex mt-2" onClick={handleBuyNow}>
+        View Cart
+      </button>
+      </Link>
       <Link to="/checkout">
-      <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2 ml-2" onClick={handleBuyNow}>
+      <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2" onClick={handleBuyNow}>
         Buy Now
       </button>
       </Link>

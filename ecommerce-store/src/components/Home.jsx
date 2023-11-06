@@ -14,7 +14,7 @@ const Home = () => {
             <p className="text-gray-700">Price: ${game.price}</p>
             <Link to={`/game/${game.id}`}>
               <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2 flex">
-                View Details
+                View Game
               </button>
             </Link>
             <Link to="/cart">
