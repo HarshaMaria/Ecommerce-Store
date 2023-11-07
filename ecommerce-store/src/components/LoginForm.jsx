@@ -22,16 +22,11 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate the form fields
     if (formData.email.trim() === '' || formData.password.trim() === '') {
       setIsFormValid(false);
     } else {
       setIsFormValid(true);
-      // If all fields are filled, dispatch loginUser action and navigate to home page
       dispatch(loginUser(formData));
-      // Navigate to the home page (assuming you have a route defined for '/home')
-      // You can replace '/home' with the actual path of your home page route
-      // For example: history.push('/home');
     }
   };
 
