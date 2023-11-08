@@ -63,6 +63,20 @@ const games = [
       // price: 79.99,
       imageUrl: "https://assets-prd.ignimgs.com/2023/03/01/subwaysurfers-1677630205274.jpg",
     },
+    {
+      id: 9,
+      // name: "Subway Surf",
+      // description: "Endless runner mobile Game",
+      // price: 79.99,
+      imageUrl: "https://assets-prd.ignimgs.com/2023/03/01/subwaysurfers-1677630205274.jpg",
+    },
+    {
+      id: 10,
+      // name: "Subway Surf",
+      // description: "Endless runner mobile Game",
+      // price: 79.99,
+      imageUrl: "https://assets-prd.ignimgs.com/2023/03/01/subwaysurfers-1677630205274.jpg",
+    },
 ];
   
 export default games;  
