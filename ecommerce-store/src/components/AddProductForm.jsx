@@ -32,7 +32,7 @@ const AddProductForm = () => {
 
   return (
     <div className="border p-4">
-      <h2 className="text-xl font-semibold mb-4">Add New Product</h2>
+      <h2 className="text-xl font-semibold mb-4">Add New Product(Game)</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-sm font-medium text-gray-600">Name</label>
