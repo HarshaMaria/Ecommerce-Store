@@ -22,7 +22,6 @@ const GameDetails = () => {
         console.error("Error fetching game details:", error);
       });
 
-    // Fetch cart items for the current user from the API endpoint
     axios.get(`http://localhost:8080/cart/all`)
       .then((response) => {
         setCartItems(response.data);
@@ -34,11 +33,9 @@ const GameDetails = () => {
   }, [id]);
 
   const handleAddToCart = () => {
-    // Perform a pre-addition action by sending a POST request to create a cart
     axios.post('http://localhost:8080/cart/create')
       .then(createCartResponse => {
-        // If cart creation is successful, proceed to add the game to the cart
-        const cartId = createCartResponse.data; // Assuming the response contains the cart ID
+        const cartId = createCartResponse.data;
         axios.post(`http://localhost:8080/cart/${cartId}/addGame`, {
           "gameId": id,
           "count": 1
