@@ -77,6 +77,48 @@ const games = [
       // price: 79.99,
       imageUrl: "https://assets-prd.ignimgs.com/2023/03/01/subwaysurfers-1677630205274.jpg",
     },
+    {
+      id: 11,
+      // name: "Subway Surf",
+      // description: "Endless runner mobile Game",
+      // price: 79.99,
+      imageUrl: "https://assets-prd.ignimgs.com/2023/03/01/subwaysurfers-1677630205274.jpg",
+    },
+    {
+      id: 12,
+      // name: "Subway Surf",
+      // description: "Endless runner mobile Game",
+      // price: 79.99,
+      imageUrl: "https://assets-prd.ignimgs.com/2023/03/01/subwaysurfers-1677630205274.jpg",
+    },
+    {
+      id: 13,
+      // name: "Subway Surf",
+      // description: "Endless runner mobile Game",
+      // price: 79.99,
+      imageUrl: "https://assets-prd.ignimgs.com/2023/03/01/subwaysurfers-1677630205274.jpg",
+    },
+    {
+      id: 14,
+      // name: "Subway Surf",
+      // description: "Endless runner mobile Game",
+      // price: 79.99,
+      imageUrl: "https://assets-prd.ignimgs.com/2023/03/01/subwaysurfers-1677630205274.jpg",
+    },
+    {
+      id: 15,
+      // name: "Subway Surf",
+      // description: "Endless runner mobile Game",
+      // price: 79.99,
+      imageUrl: "https://assets-prd.ignimgs.com/2023/03/01/subwaysurfers-1677630205274.jpg",
+    },
+    {
+      id: 16,
+      // name: "Subway Surf",
+      // description: "Endless runner mobile Game",
+      // price: 79.99,
+      imageUrl: "https://assets-prd.ignimgs.com/2023/03/01/subwaysurfers-1677630205274.jpg",
+    },
 ];
   
 export default games;  
