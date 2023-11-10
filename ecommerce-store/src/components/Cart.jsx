@@ -23,7 +23,6 @@ const Cart = () => {
 
         setData(uniqueTargetIds);
   
-        // Second Axios GET req inside .then() block of the first request
     axios.get('http://localhost:8080/games')
       .then(response => {
         const filteredGames = response.data.filter(game => uniqueTargetIds.includes(game.id));
@@ -33,7 +32,7 @@ const Cart = () => {
         setIsLoading(false);
         })
         .catch(error => {
-          //error for req1
+
           setError(error);
           setIsLoading(false);
         });
