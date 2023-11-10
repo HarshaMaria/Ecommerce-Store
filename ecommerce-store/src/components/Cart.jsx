@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Cart = () => {
-  
+  const [totalPrice, setTotalPrice] = useState(0)
   const cartItems = useSelector(state => state.cart);
   const dispatch = useDispatch();
   const [games, setGames] = useState([]);
@@ -20,6 +20,7 @@ const Cart = () => {
       .then(response => {
         const array = response.data.map(item => item.gameId);
         const uniqueTargetIds = [...new Set(array)];
+
         setData(uniqueTargetIds);
   
         // Second Axios GET req inside .then() block of the first request
@@ -28,6 +29,7 @@ const Cart = () => {
         const filteredGames = response.data.filter(game => uniqueTargetIds.includes(game.id));
         console.log(filteredGames)
         setGames(filteredGames);
+        setTotalPrice(filteredGames.reduce((total, item) => total + item.price, 0));
         setIsLoading(false);
         })
         .catch(error => {
@@ -72,7 +74,7 @@ const Cart = () => {
     return <div>No data available.</div>;
   }
 
-  
+
   return (
     <div>
       <h2 className="text-4xl font-bold mb-4">Your Shopping Cart</h2>
@@ -93,13 +95,13 @@ const Cart = () => {
             <h3>{game.name}</h3>
             <p>{game.description}</p>
             <p>Price: ${game.price}</p>
-            <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-4 ml-4" onClick={() => handleRemoveFromCart(games.id)}>
+            <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4 mb-4" onClick={() => handleRemoveFromCart(games.id)}>
             Remove
           </button>
           </div>
         ))}
       </div>
-          <p className="text-xl font-semibold mt-4">Total Price: ${total}</p>
+          <p className="text-xl font-semibold mt-4">Total Price: ${totalPrice}</p>
 
           <Link to="/checkout">
             <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2 flex">
