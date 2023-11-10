@@ -55,7 +55,6 @@ const Cart = () => {
   };
 
   const handleClearCart = () => {
-
     dispatch(clearCart());
   };
 
@@ -73,6 +72,7 @@ const Cart = () => {
     return <div>No data available.</div>;
   }
 
+  
   return (
     <div>
       <h2 className="text-4xl font-bold mb-4">Your Shopping Cart</h2>
