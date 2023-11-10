@@ -18,15 +18,13 @@ const Cart = () => {
   useEffect(() => {
     axios.get('http://localhost:8080/cart/all')
       .then(response => {
-        // Handle successful response
         const array = response.data.map(item => item.gameId);
         const uniqueTargetIds = [...new Set(array)];
         setData(uniqueTargetIds);
   
-        // Second Axios GET request inside the .then() block of the first request
+        // Second Axios GET req inside .then() block of the first request
     axios.get('http://localhost:8080/games')
       .then(response => {
-        // Handle successful response
         const filteredGames = response.data.filter(game => uniqueTargetIds.includes(game.id));
         console.log(filteredGames)
         setGames(filteredGames);
