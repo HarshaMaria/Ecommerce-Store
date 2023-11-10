@@ -16,7 +16,6 @@ const Cart = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Axios GET request to fetch data from the specified URL
     axios.get('http://localhost:8080/cart/all')
       .then(response => {
         // Handle successful response
