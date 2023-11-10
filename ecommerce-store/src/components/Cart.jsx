@@ -101,7 +101,6 @@ const Cart = () => {
       </div>
           <p className="text-xl font-semibold mt-4">Total Price: ${total}</p>
 
-
           <Link to="/checkout">
             <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2 flex">
               Proceed to Checkout
