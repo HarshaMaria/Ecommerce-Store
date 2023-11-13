@@ -71,7 +71,7 @@ const LoginForm = () => {
           {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
         </div>
         {/* <Link to="/home"> */}
-        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleSubmit}>
+        <button type="submit" className="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={handleSubmit}>
           Login
         </button>
         {/* </Link> */}
