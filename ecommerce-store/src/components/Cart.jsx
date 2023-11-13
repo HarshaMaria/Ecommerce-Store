@@ -16,14 +16,14 @@ const Cart = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('http://localhost:8080/cart/all')
+    axios.get('http://localhost:8081/cart/all')
       .then(response => {
         const array = response.data.map(item => item.gameId);
         const uniqueTargetIds = [...new Set(array)];
 
         setData(uniqueTargetIds);
   
-    axios.get('http://localhost:8080/games')
+    axios.get('http://localhost:8081/games')
       .then(response => {
         const filteredGames = response.data.filter(game => uniqueTargetIds.includes(game.id));
         console.log(filteredGames)
@@ -45,7 +45,7 @@ const Cart = () => {
   
 
   const handleRemoveFromCart = item => {
-    axios.delete(`http://localhost:8080/cart/${item.id}`)
+    axios.delete(`http://localhost:8081/cart/${item.id}`)
       .then(response => {
         dispatch(removeFromCart(item));
         console.log('Item removed from cart:', item);

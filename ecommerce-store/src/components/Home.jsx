@@ -8,7 +8,7 @@ const Home = () => {
   const [id, setId] = useState(0);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/games")
+    axios.get("http://localhost:8081/games")
       .then((response) => {
         setGames(response.data);
         console.log(response.data)

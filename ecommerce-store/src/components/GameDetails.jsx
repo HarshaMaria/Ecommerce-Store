@@ -13,7 +13,7 @@ const GameDetails = () => {
 
   useEffect(() => {
     // Fetch game details from the API endpoint
-    axios.get(`http://localhost:8080/games/${id}`)
+    axios.get(`http://localhost:8081/games/${id}`)
       .then((response) => {
         setGame(response.data);
         console.log("Game by ID:", response.data);
@@ -22,7 +22,7 @@ const GameDetails = () => {
         console.error("Error fetching game details:", error);
       });
 
-    axios.get(`http://localhost:8080/cart/all`)
+    axios.get(`http://localhost:8081/cart/all`)
       .then((response) => {
         setCartItems(response.data);
         console.log('Cart items:', response.data);  
@@ -33,7 +33,7 @@ const GameDetails = () => {
   }, [id]);
 
   const handleAddToCart = () => {
-    axios.post('http://localhost:8080/cart/create')
+    axios.post('http://localhost:8081/cart/create')
       .then(createCartResponse => {
         const cartId = createCartResponse.data;
         axios.post(`http://localhost:8080/cart/${cartId}/addGame`, {
