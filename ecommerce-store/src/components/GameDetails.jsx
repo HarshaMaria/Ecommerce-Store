@@ -121,7 +121,7 @@ const GameDetails = () => {
 
   const handleAddToCart = () => {
     // Add the game to Cart
-    axios.post(`http://localhost:8080/games/${id}/create`, {
+    axios.post(`http://localhost:8081/games/${id}/create`, {
       "gameId": id,
       "count": 1
     })
