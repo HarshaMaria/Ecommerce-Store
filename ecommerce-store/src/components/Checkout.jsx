@@ -42,7 +42,7 @@ const Checkout = () => {
   };
 
   return (
-    <div className="border p-4">
+    <div className="border p-4 bg-yellow-200">
       <h2 className="text-4xl font-bold mb-4">Checkout</h2>
       {!paymentSuccess ? (
         <div>
@@ -71,13 +71,13 @@ const Checkout = () => {
               </li>
             ))}
           </ul>
-          <p className="text-gray-700 mt-4">Total: ${cartItems.reduce((total, item) => total + item.price, 0)}</p>
+          <p className="text-black-700 mt-4">Total: ${cartItems.reduce((total, item) => total + item.price, 0)}</p>
           <form onSubmit={handlePaymentSubmit} className="mt-4">
-            <label>
+            <label className="flex mb-4">
               Card Number:
               <input type="text" name="cardNumber" value={paymentDetails.cardNumber} onChange={handlePaymentInputChange} />
             </label>
-            <label>
+            <label className="flex mb-4">
               Expiry Date:
               <input type="text" name="expiryDate" value={paymentDetails.expiryDate} onChange={handlePaymentInputChange} />
             </label>
