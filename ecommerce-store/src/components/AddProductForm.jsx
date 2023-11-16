@@ -40,7 +40,7 @@ const AddProductForm = () => {
   };
 
   return (
-    <div className="border p-4">
+    <div className="border p-4 bg-yellow-200">
       <h2 className="text-xl font-semibold mb-4">Add New Product(Game)</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
@@ -87,7 +87,7 @@ const AddProductForm = () => {
             required
           />
         </div> */}
-        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <button type="submit" className="bg-blue-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded">
           Add Product
         </button>
       </form>
