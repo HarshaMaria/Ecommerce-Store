@@ -49,7 +49,7 @@ const Cart = () => {
   const total = cartItems.reduce((acc, item) => acc + item.price, 0).toFixed(2);
 
   return (
-    <div>
+    <div className="border p-4 bg-purple-200">
       <h2 className="text-4xl font-bold mb-4">Your Shopping Cart</h2>
       {cartItems.length === 0 ? (
         <div>
