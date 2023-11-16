@@ -23,13 +23,13 @@ const Home = () => {
     <div className="container mx-auto px-4">
       <div className="grid grid-cols-2 gap-4 w-100 mb-16">
         {games && games.map((game) => (
-          <div key={game.id} className="border p-4 bg-rose-200 rounded-lg shadow-md">
+          <div key={game.id} className="border p-4 bg-orange-200 rounded-lg shadow-md">
             <h2 className="text-xl font-semibold">{game.name}</h2>
             <img src={Games[game.id].imageUrl} alt={game.name} className="my-2 w-32 h-32 object-cover" />
             <p className="text-gray-700">{game.description}</p>
             <p className="text-gray-700">Price: ${game.price}</p>
             <Link to={`/game/${game.id}`}>
-              <button className="bg-blue-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2 flex">
+              <button className="bg-blue-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded mt-2 flex">
                 View Game
               </button>
             </Link>
@@ -38,7 +38,7 @@ const Home = () => {
       </div>
       <div className="fixed bottom-0 left-0 w-full bg-white p-4 text-center shadow-md">
         {/* <Link to="/cart">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <button className="bg-blue-500 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded">
             View Cart
           </button>
         </Link> */}

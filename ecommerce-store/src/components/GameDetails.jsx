@@ -9,7 +9,7 @@ const GameDetails = () => {
   const [cartItems, setCartItems] = useState([]);
   
   useEffect(() => {
-    // Fetch game details from the API endpoint
+    // Fetch game details
     axios.get(`http://localhost:8081/games/${id}`)
       .then((response) => {
         setGame(response.data);
@@ -50,7 +50,8 @@ const GameDetails = () => {
   };
 
   return (
-    <div className="border p-4">
+   <div className="flex justify-center items-center mt-12"> 
+    <div className="border p-8 w-80 bg-rose-200">
       <h2 className="text-xl font-semibold mb-2">{game.name}</h2>
       <img src={Games[id].imageUrl} alt={game.name} className="mb-2 w-64 h-64 object-cover" />
       <p className="text-gray-700 mb-2">{game.description}</p>
@@ -69,6 +70,7 @@ const GameDetails = () => {
         </button>
       </Link>
     </div>
+   </div> 
   );
 };
 
