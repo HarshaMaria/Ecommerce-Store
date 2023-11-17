@@ -7,12 +7,19 @@ import axios from 'axios';
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const dispatch = useDispatch();
+  const [total, setTotal] = useState(null)
 
   useEffect(() => {
     axios.get(`http://localhost:8081/games/carts`)
       .then((response) => {
         setCartItems(response.data);
         console.log('Cart items:', response.data);  
+        const tt = response.data.reduce((acc, game) => {
+          return acc + (game.game.price * game.count);
+        }, 0);
+        // const tt= response.data.reduce((acc, item) => acc + item.price, 0)
+        setTotal(tt);
+        console.log(response.data)
       })
       .catch((error) => {
         console.error("Error fetching cart items:", error);
@@ -30,6 +37,8 @@ const Cart = () => {
           .then((response) => {
             setCartItems(response.data);
             console.log('Updated cart items:', response.data);  
+
+
           })
           .catch((error) => {
             console.error("Error fetching updated cart items:", error);
@@ -46,7 +55,6 @@ const Cart = () => {
     dispatch(clearCart());
   };
 
-  const total = cartItems.reduce((acc, item) => acc + item.price, 0).toFixed(2);
 
   return (
     <div className="border p-4 bg-purple-200">
