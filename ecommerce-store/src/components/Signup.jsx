@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
  
 export const Signup = (props) => {
@@ -74,11 +75,13 @@ export const Signup = (props) => {
           <p className="mt-2 text-center text-sm text-red-600">{errorMessage}</p>
         )}
         <div className="text-center">
+          <Link to = "/">
           <button
             className="mt-2 w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
             onClick={() => props.onFormSwitch("login")} >
             Already have an account? Login here.
           </button>
+          </Link>
         </div>
       </div>
     </div>
