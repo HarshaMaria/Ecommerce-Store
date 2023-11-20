@@ -12,13 +12,14 @@ const Cart = () => {
   const { userId } = useParams();
 
   useEffect(() => {
+    console.log(userId)
     axios.get(`http://localhost:8081/games/carts/${userId}`)
       .then((response) => {
         setCartItems(response.data);
         console.log('Cart items:', response.data); 
-         
+
         const tt = response.data.reduce((acc, game) => {
-          return acc + (game.game.price * game.count);
+          return acc + (game[0].price * game[0].count);
         }, 0);
         // const tt= response.data.reduce((acc, item) => acc + item.price, 0)
         setTotal(tt);
@@ -31,8 +32,8 @@ const Cart = () => {
 
   const handleRemoveFromCart = async item => {
     try {
-      console.log(item.id)
-      const response = await axios.delete(`http://localhost:8081/games/carts/${item.id}`);
+      console.log(item.gameId, userId)
+      const response = await axios.delete(`http://localhost:8081/games/carts/${item.gameId}?userId=${userId}`);
       if (response.status === 200) {
         dispatch(removeFromCart(item));
         // Updated cart
@@ -65,7 +66,7 @@ const Cart = () => {
       {cartItems.length === 0 ? (
         <div>
         <p>Your Shopping cart is empty.</p>
-        <Link to="/home">
+        <Link to={`/home/${userId}`}>
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">
             Back to Home
           </button>
@@ -74,20 +75,23 @@ const Cart = () => {
       ) : (
         <div>
           <ul>
-            {cartItems.map(item => (
-              <li key={item.id}>
-                {item.game.name} - ${item.game.price}
-                <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-4 ml-4" onClick={() => handleRemoveFromCart(item.game)}>
-                  Remove
-                </button>
-              </li>
-            ))}
+          {cartItems && cartItems.game.map((item) => (
+        <div key={item.gameId}>
+          <p>{item.name} - ${item.price}</p>
+          <button
+            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-4 ml-4"
+            onClick={() => handleRemoveFromCart(item)}
+          >
+            Remove
+          </button>
+        </div>
+      ))} 
           </ul>
           <p className="text-xl font-semibold mt-4">Total Price: ${total}</p>
           {/* <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2" onClick={handleClearCart}>
             Clear Cart
           </button> */}
-          <Link to="/checkout">
+          <Link to="/home/:userId">
           <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2 flex">
             Proceed to Checkout
           </button>

@@ -6,7 +6,7 @@ import Home from "./components/Home";
 import GameDetails from "./components/GameDetails";
 import Cart from "./components/Cart";
 import AddProductForm from "./components/AddProductForm";
-import Checkout from "./components/Checkout";
+// import Checkout from "./components/Checkout";
 import "./index.css";
 
 const App = () => {
@@ -21,7 +21,7 @@ const App = () => {
           <Route path="/game/:userId/:id" element={<GameDetails />} />
           <Route path="/add-product" element={<AddProductForm />} />
           <Route path="/cart/:userId" element={<Cart />} />      
-          <Route path="/checkout" element={<Checkout />} />   
+          {/* <Route path="/checkout" element={<Checkout />} />    */}
         </Routes>
       </div>
     </Router>
