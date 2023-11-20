@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { removeFromCart, clearCart } from '../reducers/cartSlice';
-import { Link } from 'react-router-dom';
+import { Link,useParams } from 'react-router-dom';
 import axios from 'axios';
+
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const dispatch = useDispatch();
   const [total, setTotal] = useState(null)
+  const { userId } = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:8081/games/carts`)
+    axios.get(`http://localhost:8081/games/carts/${userId}`)
       .then((response) => {
         setCartItems(response.data);
-        console.log('Cart items:', response.data);  
+        console.log('Cart items:', response.data); 
+         
         const tt = response.data.reduce((acc, game) => {
           return acc + (game.game.price * game.count);
         }, 0);

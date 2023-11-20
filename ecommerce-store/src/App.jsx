@@ -17,10 +17,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/Signup" element={<Signup />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/game/:id" element={<GameDetails />} />
+          <Route path="/home/:userId" element={<Home />} />
+          <Route path="/game/:userId/:id" element={<GameDetails />} />
           <Route path="/add-product" element={<AddProductForm />} />
-          <Route path="/cart" element={<Cart />} />      
+          <Route path="/cart/:userId" element={<Cart />} />      
           <Route path="/checkout" element={<Checkout />} />   
         </Routes>
       </div>

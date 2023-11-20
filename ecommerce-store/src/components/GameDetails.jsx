@@ -4,7 +4,7 @@ import Games from '../games';
 import axios from "axios";
 
 const GameDetails = () => {
-  const { id } = useParams();
+  const { userId,id } = useParams();
   const [game, setGame] = useState({});
   const [cartItems, setCartItems] = useState([]);
   
@@ -20,7 +20,7 @@ const GameDetails = () => {
       });
 
     // View Cart
-    axios.get(`http://localhost:8081/games/carts`)
+    axios.get(`http://localhost:8081/games/carts/${userId}`)
       .then((response) => {
         setCartItems(response.data);
         console.log('Cart items:', response.data);  
@@ -32,10 +32,8 @@ const GameDetails = () => {
 
   const handleAddToCart = () => {
     // Add the game to Cart
-    axios.post(`http://localhost:8081/games/${id}/create`, {
-      "gameId": id,
-      "count": 1
-    })
+    console.log(id, userId)
+    axios.post(`http://localhost:8081/games/${id}/create?userId=${userId}`)
     .then(response => {
       console.log('Game added to cart:', response.data);
       alert('Game added to cart!');
@@ -59,7 +57,7 @@ const GameDetails = () => {
       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex mt-2" onClick={handleAddToCart}>
         Add to Cart
       </button>
-      <Link to="/cart">
+      <Link to={`/cart/${userId}`}>
         <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex mt-2">
           View Cart
         </button>

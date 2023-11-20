@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+
  
 export const Signup = (props) => {
   const [email, setEmail] = useState("");
@@ -8,6 +9,7 @@ export const Signup = (props) => {
   const [username, setUsername] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [id, setId] = useState();
  
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,8 +23,7 @@ export const Signup = (props) => {
         email,
         password,
         username,
-      });
- 
+      })
       console.log("Registration successful", response.data);
       setSuccessMessage("Registration successful! You can now login.");
       setEmail("");
@@ -82,6 +83,7 @@ export const Signup = (props) => {
             Already have an account? Login here.
           </button>
           </Link>
+          <h1>{id}</h1>
         </div>
       </div>
     </div>

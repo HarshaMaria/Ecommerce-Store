@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
 import Games from "../games";
 import axios from "axios";
 
 const Home = () => {
   const [games, setGames] = useState([]);
-  const [id, setId] = useState(0);
+  const { userId } = useParams();
 
   useEffect(() => {
     axios.get("http://localhost:8081/games")
@@ -28,7 +28,7 @@ const Home = () => {
             <img src={Games[index].imageUrl} alt={game.name} className="my-2 w-32 h-32 object-cover" />
             <p className="text-gray-700">{game.description}</p>
             <p className="text-gray-700">Price: ${game.price}</p>
-            <Link to={`/game/${game.gameId}`}>
+            <Link to={`/game/${userId}/${game.gameId}`}>
               <button className="bg-blue-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded mt-2 flex">
                 View Game
               </button>
