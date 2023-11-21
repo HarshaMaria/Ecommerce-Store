@@ -17,12 +17,13 @@ const Cart = () => {
       .then((response) => {
         setCartItems(response.data);
         console.log('Cart items:', response.data); 
-
-        const tt = response.data.reduce((acc, game) => {
-          return acc + (game[0].price * game[0].count);
+        const totalPrices = response.data.game.reduce((total, item) => {
+          const itemTotalPrice = item.price * item.count; // Calculate total price for each game item
+          return total + itemTotalPrice; // Accumulate individual totals to get overall total price
         }, 0);
+        console.log(totalPrices)
         // const tt= response.data.reduce((acc, item) => acc + item.price, 0)
-        setTotal(tt);
+        setTotal(totalPrices);
         console.log(response.data)
       })
       .catch((error) => {
@@ -37,11 +38,12 @@ const Cart = () => {
       if (response.status === 200) {
         dispatch(removeFromCart(item));
         // Updated cart
-        axios.get(`http://localhost:8081/games/carts`)
+        axios.get(`http://localhost:8081/games/carts/${userId}`)
           .then((response) => {
             setCartItems(response.data);
             console.log('Updated cart items:', response.data);  
-
+            setTotal(0);
+            // window.location.reload();
 
           })
           .catch((error) => {
@@ -78,10 +80,7 @@ const Cart = () => {
           {cartItems && cartItems.game.map((item) => (
         <div key={item.gameId}>
           <p>{item.name} - ${item.price}</p>
-          <button
-            className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-4 ml-4"
-            onClick={() => handleRemoveFromCart(item)}
-          >
+          <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-4 ml-4" onClick={() => handleRemoveFromCart(item)}>
             Remove
           </button>
         </div>

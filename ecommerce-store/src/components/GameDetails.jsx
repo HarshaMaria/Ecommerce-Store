@@ -62,11 +62,11 @@ const GameDetails = () => {
           View Cart
         </button>
       </Link>
-      <Link to="/checkout">
+      {/* <Link to="/checkout"> */}
         <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2" onClick={handleBuyNow}>
           Buy Now
         </button>
-      </Link>
+      {/* </Link> */}
     </div>
    </div> 
   );
