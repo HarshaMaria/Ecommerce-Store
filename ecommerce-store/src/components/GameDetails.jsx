@@ -43,9 +43,9 @@ const GameDetails = () => {
     });
   };
   
-  const handleBuyNow = () => {
-    alert('Buy Now clicked! Implement Buy Now logic here.');
-  };
+  // const handleBuyNow = () => {
+  //   alert('Buy Now clicked! Implement Buy Now logic here.');
+  // };
 
   return (
    <div className="flex justify-center items-center mt-12"> 
@@ -62,11 +62,12 @@ const GameDetails = () => {
           View Cart
         </button>
       </Link>
-      {/* <Link to="/checkout"> */}
-        <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2" onClick={handleBuyNow}>
-          Buy Now
+      <Link to={`/home/${userId}`}>
+        {/* <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2" onClick={handleBuyNow}> */}
+        <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2">
+          Home
         </button>
-      {/* </Link> */}
+      </Link>
     </div>
    </div> 
   );

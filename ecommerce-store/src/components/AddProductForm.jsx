@@ -76,7 +76,7 @@ const AddProductForm = () => {
             required
           />
         </div>
-        {/* <div className="mb-4">
+        <div className="mb-4">
           <label className="block text-sm font-medium text-gray-600">Image URL</label>
           <input
             type="url"
@@ -86,7 +86,7 @@ const AddProductForm = () => {
             className="mt-1 p-2 border rounded w-full"
             required
           />
-        </div> */}
+        </div>
         <button type="submit" className="bg-blue-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded">
           Add Product
         </button>

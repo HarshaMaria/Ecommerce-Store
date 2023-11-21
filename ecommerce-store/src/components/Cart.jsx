@@ -13,16 +13,15 @@ const Cart = () => {
 
   useEffect(() => {
     console.log(userId)
-    axios.get(`http://localhost:8081/games/carts/${userId}`)
+    axios.get(`http://localhost:8081/games/carts?userId=${userId}`)
       .then((response) => {
         setCartItems(response.data);
         console.log('Cart items:', response.data); 
-        const totalPrices = response.data.game.reduce((total, item) => {
-          const itemTotalPrice = item.price * item.count; // Calculate total price for each game item
-          return total + itemTotalPrice; // Accumulate individual totals to get overall total price
+        const totalPrices = response.data.reduce((total, item) => {
+          const itemTotalPrice = item.price * item.count;
+          return total + itemTotalPrice; 
         }, 0);
         console.log(totalPrices)
-        // const tt= response.data.reduce((acc, item) => acc + item.price, 0)
         setTotal(totalPrices);
         console.log(response.data)
       })
@@ -38,13 +37,11 @@ const Cart = () => {
       if (response.status === 200) {
         dispatch(removeFromCart(item));
         // Updated cart
-        axios.get(`http://localhost:8081/games/carts/${userId}`)
+        axios.get(`http://localhost:8081/games/carts?userId=${userId}`)
           .then((response) => {
             setCartItems(response.data);
             console.log('Updated cart items:', response.data);  
             setTotal(0);
-            // window.location.reload();
-
           })
           .catch((error) => {
             console.error("Error fetching updated cart items:", error);
@@ -77,7 +74,7 @@ const Cart = () => {
       ) : (
         <div>
           <ul>
-          {cartItems && cartItems.game.map((item) => (
+          {cartItems && cartItems.map((item) => (
         <div key={item.gameId}>
           <p>{item.name} - ${item.price}</p>
           <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mb-4 ml-4" onClick={() => handleRemoveFromCart(item)}>
@@ -90,7 +87,7 @@ const Cart = () => {
           {/* <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2" onClick={handleClearCart}>
             Clear Cart
           </button> */}
-          <Link to="/home/:userId">
+          <Link to={`/home/${userId}`}>
           <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2 flex">
             Proceed to Checkout
           </button>
