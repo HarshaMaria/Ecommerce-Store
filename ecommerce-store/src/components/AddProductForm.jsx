@@ -22,7 +22,7 @@ const AddProductForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:8080/games', formData)
+    axios.post('http://localhost:8081/games', formData)
       .then((response) => {
         dispatch(addNewGame(response.data));
         // console.log(response)
