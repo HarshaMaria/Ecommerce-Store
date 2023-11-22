@@ -27,7 +27,7 @@ export const Login = (props) => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-400 to-red-500 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-screen flex items-center justify-center bg-gradient-to-r from-gray-400 to-red-500 py-12 w-[600px] sm:px-6 lg:px-8 ml-[460px] mt-12">
       <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-lg shadow-md">
         <div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">

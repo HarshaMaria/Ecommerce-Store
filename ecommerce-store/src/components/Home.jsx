@@ -20,10 +20,11 @@ const Home = () => {
 
   return (
    <div> 
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-[420px]">
       <div className="grid grid-cols-2 gap-4 w-100 mb-16">
         {games && games.map((game,index) => (
           <div key={game.id} className="border p-4 bg-orange-200 rounded-lg shadow-md">
+           <div className="ml-16">
             <h2 className="text-xl font-semibold">{game.name}</h2>
             <img src={Games[index].imageUrl} alt={game.name} className="my-2 w-32 h-32 object-cover" />
             <p className="text-gray-700">{game.description}</p>
@@ -33,6 +34,7 @@ const Home = () => {
                 View Game
               </button>
             </Link>
+           </div>
           </div>
         ))}
       </div>
