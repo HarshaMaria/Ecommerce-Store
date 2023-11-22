@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link,useParams } from "react-router-dom";
 import Games from "../games";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const [games, setGames] = useState([]);
@@ -18,13 +19,27 @@ const Home = () => {
       });
   }, []);
 
+  const navigate = useNavigate
+
+  const setLogout = () => {
+    localStorage.removeItem("LoginId")
+    window.location.reload(false);
+    navigate('/login')
+  }
+
   return (
-   <div> 
-    <div className="container mx-auto px-[420px]">
-      <div className="grid grid-cols-2 gap-4 w-100 mb-16">
+    <div className="container mx-auto">
+      <div class="flex justify-end mt-[-48px] mb-[12px] mr-[48px]">
+      <Link to="/">
+      <button className="text-red-800  hover:bg-red-200 font-bold py-2 px-4 rounded m-1 cursor-pointer mt-[2px]" onClick={() => setLogout()}>
+        Logout
+      </button>
+      </Link>
+      </div>
+      <div className="grid grid-cols-4 gap-4 w-100 mb-20">
         {games && games.map((game,index) => (
           <div key={game.id} className="border p-4 bg-orange-200 rounded-lg shadow-md">
-           <div className="ml-16">
+           <div className="ml-[100px]">
             <h2 className="text-xl font-semibold">{game.name}</h2>
             <img src={Games[index].imageUrl} alt={game.name} className="my-2 w-32 h-32 object-cover" />
             <p className="text-gray-700">{game.description}</p>
@@ -34,7 +49,7 @@ const Home = () => {
                 View Game
               </button>
             </Link>
-           </div>
+           </div> 
           </div>
         ))}
       </div>
@@ -51,9 +66,8 @@ const Home = () => {
         </Link>
       </div>
     </div>
-   </div>
+  
   );
 };
 
 export default Home;
-
