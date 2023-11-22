@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <div className="container mx-auto">
       <div class="flex justify-end mt-[-48px] mb-[12px] mr-[48px]">
-      <Link to="/">
+      <Link to="/Login">
       <button className="text-red-800  hover:bg-red-200 font-bold py-2 px-4 rounded m-1 cursor-pointer mt-[2px]" onClick={() => setLogout()}>
         Logout
       </button>

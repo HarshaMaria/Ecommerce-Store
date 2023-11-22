@@ -42,7 +42,7 @@ const App = () => {
           <Route path="/cart/:userId" element={<Cart />} />
           {isLoggedIn ?
             <Route path="/home/:userId" element={<Home />} /> :
-            <Route path="/login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
+            <Route path="/Login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
           }
 
         </Routes>
