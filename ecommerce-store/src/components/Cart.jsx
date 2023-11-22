@@ -36,6 +36,7 @@ const Cart = () => {
       const response = await axios.delete(`http://localhost:8081/games/carts/${item.gameId}?userId=${userId}`);
       if (response.status === 200) {
         dispatch(removeFromCart(item));
+        window.location.reload();
         // Updated cart
         axios.get(`http://localhost:8081/games/carts?userId=${userId}`)
           .then((response) => {
@@ -54,10 +55,9 @@ const Cart = () => {
     }
   };
 
-  const handleClearCart = () => {
-    dispatch(clearCart());
-  };
-
+  // const handleClearCart = () => {
+  //   dispatch(clearCart());
+  // };
 
   return (
     <div className="border p-4 bg-purple-200">
