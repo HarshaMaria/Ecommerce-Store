@@ -40,7 +40,7 @@ const AddProductForm = () => {
   };
 
   return (
-    <div className="border p-4 w-[620px] bg-yellow-200 ml-[448px]">
+    <div className="border p-4 w-[620px] bg-yellow-200 ml-[448px] mt-[48px]">
       <h2 className="text-xl font-semibold mb-4">Add New Product(Game)</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
