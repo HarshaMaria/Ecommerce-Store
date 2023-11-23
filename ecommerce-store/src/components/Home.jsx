@@ -40,7 +40,7 @@ const Home = () => {
           </button>
          </Link> 
          <Link to="/">
-         <button className="text-red-800  hover:bg-red-200 font-bold py-2 px-4 rounded m-1 cursor-pointer mt-[-4px] mr-[-24px]" onClick={() =>handleLogout()}>  {/* onClick={() => setLogout()} */}
+         <button className="text-red-800  hover:bg-red-200 font-bold py-2 px-4 rounded m-1 cursor-pointer mt-[-4px] mr-[-24px]" onClick={() => setLogout()}>  {/* onClick={() =>handleLogout()} */}
           Logout
          </button>
          </Link>       

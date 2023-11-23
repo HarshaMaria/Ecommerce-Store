@@ -4,7 +4,6 @@ import { removeFromCart, clearCart } from '../reducers/cartSlice';
 import { Link,useParams } from 'react-router-dom';
 import axios from 'axios';
 
-
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
   const dispatch = useDispatch();
@@ -92,4 +91,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
