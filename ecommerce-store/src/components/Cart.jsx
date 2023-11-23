@@ -55,10 +55,6 @@ const Cart = () => {
     }
   };
 
-  // const handleClearCart = () => {
-  //   dispatch(clearCart());
-  // };
-
   return (
     <div className="border p-4 bg-purple-200">
       <h2 className="text-4xl font-bold mb-4">Your Shopping Cart</h2>
@@ -84,9 +80,6 @@ const Cart = () => {
       ))} 
           </ul>
           <p className="text-xl font-semibold mt-4">Total Price: ${total}</p>
-          {/* <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2" onClick={handleClearCart}>
-            Clear Cart
-          </button> */}
           <Link to={`/home/${userId}`}>
           <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2 flex">
             Proceed to Checkout
@@ -99,3 +92,4 @@ const Cart = () => {
 };
 
 export default Cart;
+
