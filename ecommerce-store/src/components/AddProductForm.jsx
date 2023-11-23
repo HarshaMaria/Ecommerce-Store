@@ -25,7 +25,6 @@ const AddProductForm = () => {
     axios.post('http://localhost:8081/games', formData)
       .then((response) => {
         dispatch(addNewGame(response.data));
-        // console.log(response)
         setFormData({
           name: '',
           description: '',
