@@ -55,7 +55,8 @@ const Cart = () => {
   };
 
   return (
-    <div className="border p-4 bg-purple-200">
+   <div className="mt-[24px]"> 
+    <div className="border p-4 bg-purple-200 w-[1000px]">
       <h2 className="text-4xl font-bold mb-4">Your Shopping Cart</h2>
       {cartItems.length === 0 ? (
         <div>
@@ -87,6 +88,7 @@ const Cart = () => {
         </div>
       )}
     </div>
+   </div> 
   );
 };
 
