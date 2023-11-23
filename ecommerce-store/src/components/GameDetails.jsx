@@ -20,7 +20,7 @@ const GameDetails = () => {
       });
 
     // View Cart
-    axios.get(`http://localhost:8081/games/carts/${userId}`)
+    axios.get(`http://localhost:8081/carts/${userId}`)
       .then((response) => {
         setCartItems(response.data);
         console.log('Cart items:', response.data);  
@@ -33,7 +33,7 @@ const GameDetails = () => {
   const handleAddToCart = () => {
     // Add the game to Cart
     console.log(id, userId)
-    axios.post(`http://localhost:8081/games/${id}/create?userId=${userId}`)
+    axios.post(`http://localhost:8081/carts/${id}/create?userId=${userId}`)
     .then(response => {
       console.log('Game added to cart:', response.data);
       alert('Game added to cart!');

@@ -12,7 +12,7 @@ const Cart = () => {
 
   useEffect(() => {
     console.log(userId)
-    axios.get(`http://localhost:8081/games/carts?userId=${userId}`)
+    axios.get(`http://localhost:8081/carts?userId=${userId}`)
       .then((response) => {
         setCartItems(response.data);
         console.log('Cart items:', response.data); 
@@ -32,7 +32,7 @@ const Cart = () => {
   const handleRemoveFromCart = async item => {
     try {
       console.log(item.gameId, userId)
-      const response = await axios.delete(`http://localhost:8081/games/carts/${item.gameId}?userId=${userId}`);
+      const response = await axios.delete(`http://localhost:8081/carts/${item.gameId}?userId=${userId}`);
       if (response.status === 200) {
         dispatch(removeFromCart(item));
         window.location.reload();
