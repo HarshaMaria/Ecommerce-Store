@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link,useParams } from "react-router-dom";
 import Games from "../games";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AddIcon from '@mui/icons-material/Add';
 
 const Home = () => {
   const [games, setGames] = useState([]);
   const { userId } = useParams();
-  const navigate = useNavigate();
 
   useEffect(() => {
     axios.get("http://localhost:8081/games")
@@ -20,6 +20,8 @@ const Home = () => {
         console.error("Error fetching games:", error);
       });
   }, []);
+
+  const navigate = useNavigate
 
   const setLogout = () => {
     localStorage.removeItem("LoginId")
@@ -46,7 +48,7 @@ const Home = () => {
          </Link>       
        </div> 
       </div>
-      <div className="grid grid-cols-4 gap-4 w-100 mb-4">
+      <div className="grid grid-cols-4 gap-4 w-100 mb-0">
         {games && games.map((game,index) => (
           <div key={game.id} className="border p-4 bg-orange-200 rounded-lg shadow-md">
            <div className="mx-auto w-[auto]">
