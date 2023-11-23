@@ -43,10 +43,6 @@ const GameDetails = () => {
     });
   };
   
-  // const handleBuyNow = () => {
-  //   alert('Buy Now clicked! Implement Buy Now logic here.');
-  // };
-
   return (
    <div className="flex justify-center items-center mt-12"> 
     <div className="border p-8 w-80 bg-rose-200">
@@ -63,7 +59,6 @@ const GameDetails = () => {
         </button>
       </Link>
       <Link to={`/home/${userId}`}>
-        {/* <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2" onClick={handleBuyNow}> */}
         <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2">
           Home
         </button>
