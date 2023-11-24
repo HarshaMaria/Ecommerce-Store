@@ -13,7 +13,6 @@ const GameDetails = () => {
     axios.get(`http://localhost:8081/games/${id}`)
       .then((response) => {
         setGame(response.data);
-        console.log("Game by ID:", response.data);
       })
       .catch((error) => {
         console.error("Error fetching game details:", error);
@@ -35,7 +34,6 @@ const GameDetails = () => {
     console.log(id, userId)
     axios.post(`http://localhost:8081/carts/${id}/create?userId=${userId}`)
     .then(response => {
-      console.log('Game added to cart:', response.data);
       alert('Game added to cart!');
     })
     .catch(error => {

@@ -14,7 +14,6 @@ export const Login = (props) => {
       e.preventDefault();
       axios.post('http://localhost:8081/v1/user/login', { email, password: pass })
       .then(response => {
-      console.log("Resd", response.data);
       setUserId(response.data);
       props.onLoginSuccess();
       localStorage.setItem("LoginId", response.data)

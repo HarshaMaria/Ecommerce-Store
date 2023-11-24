@@ -30,8 +30,6 @@ const AddProductForm = () => {
           description: '',
           price: '',
         });
-
-        console.log('Product added successfully:', response.data);
       })
       .catch((error) => {
         console.error('Error adding product:', error);

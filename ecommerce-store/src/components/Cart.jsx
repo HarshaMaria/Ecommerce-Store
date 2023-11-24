@@ -11,18 +11,14 @@ const Cart = () => {
   const { userId } = useParams();
 
   useEffect(() => {
-    console.log(userId)
     axios.get(`http://localhost:8081/carts?userId=${userId}`)
       .then((response) => {
         setCartItems(response.data);
-        console.log('Cart items:', response.data); 
         const totalPrices = response.data.reduce((total, item) => {
           const itemTotalPrice = item.price * item.count;
           return total + itemTotalPrice; 
         }, 0);
-        console.log(totalPrices)
         setTotal(totalPrices);
-        console.log(response.data)
       })
       .catch((error) => {
         console.error("Error fetching cart items:", error);
@@ -31,7 +27,6 @@ const Cart = () => {
 
   const handleRemoveFromCart = async item => {
     try {
-      console.log(item.gameId, userId)
       const response = await axios.delete(`http://localhost:8081/carts/${item.gameId}?userId=${userId}`);
       if (response.status === 200) {
         dispatch(removeFromCart(item));
@@ -40,7 +35,6 @@ const Cart = () => {
         axios.get(`http://localhost:8081/games/carts?userId=${userId}`)
           .then((response) => {
             setCartItems(response.data);
-            console.log('Updated cart items:', response.data);  
             setTotal(0);
           })
           .catch((error) => {
