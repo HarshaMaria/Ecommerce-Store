@@ -61,7 +61,7 @@ const games = [
       // name: "Subway Surf",
       // description: "Endless runner mobile Game",
       // price: 79.99,
-      imageUrl: "https://plus.unsplash.com/premium_photo-1672855191413-aa7983bfc5f4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2hlc3N8ZW58MHx8MHx8fDA%3D",
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQEk8ouaJ4ZVW6uwznHqWk0mq9bDgfFlMWVg&usqp=CAU",
     },
     {
       id: 9,
@@ -79,7 +79,7 @@ const games = [
     },
     {
     id: 11,
-    // name: "Mind Craft",
+    // name: "Mine Craft",
     // description:"Craft-Game",
     // price: 99.99,
     imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQEk8ouaJ4ZVW6uwznHqWk0mq9bDgfFlMWVg&usqp=CAU",
@@ -93,17 +93,17 @@ const games = [
     },
     {
       id: 13,
-      // name: "Subway Surf",
-      // description: "Endless runner mobile Game",
-      // price: 79.99,
-      imageUrl: "https://assets-prd.ignimgs.com/2023/03/01/subwaysurfers-1677630205274.jpg",
+      // name: "Fruit Ninja",
+      // description: "Fruit-Break Game",
+      // price: 119.99,
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6k1zqq_1JG23WiuD22KKAUb3rVGsMgKx5ZA&usqp=CAU",
     },
     {
       id: 14,
-      // name: "Subway Surf",
-      // description: "Endless runner mobile Game",
-      // price: 79.99,
-      imageUrl: "https://assets-prd.ignimgs.com/2023/03/01/subwaysurfers-1677630205274.jpg",
+      // name: "Chain-Reaction",
+      // description: "",
+      // price: 129.99,
+      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa3dYmpQbRpREsMet6PYzKplloauOSISzRAQ&usqp=CAU",
     },
     // {
     //   id: 15,
