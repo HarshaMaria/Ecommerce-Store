@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
  
 export const Signup = (props) => {
   const [email, setEmail] = useState("");
