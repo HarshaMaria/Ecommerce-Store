@@ -7,6 +7,7 @@ import AddIcon from '@mui/icons-material/Add';
 
 const Home = () => {
   const [games, setGames] = useState([]);
+  const [cartItemCount, setCartItemCount] = useState(0);
   const { userId } = useParams();
   const navigate = useNavigate();
 
@@ -14,18 +15,25 @@ const Home = () => {
     axios.get("http://localhost:8081/games")
       .then((response) => {
         setGames(response.data);
-        console.log(response.data)
       })
       .catch((error) => {
         console.error("Error fetching games:", error);
       });
-  }, []);
 
-  const setLogout = () => {
-    localStorage.removeItem("LoginId")
-    window.location.reload(false);
-    navigate('/login')
-  }
+    axios.get(`http://localhost:8081/carts/items?userId=${userId}`)
+      .then((response) => {
+        setCartItemCount(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching cart items count:", error);
+      });
+  }, [userId]);
+
+    const setLogout = () => {
+      localStorage.removeItem("LoginId")
+      window.location.reload(false);
+      navigate('/login')
+    }
 
   return (
     <div className="container mx-auto mt-[12px]">
@@ -33,6 +41,9 @@ const Home = () => {
        <div className="flex justify-end gap-4">
          <Link to={`/cart/${userId}`}> 
           <ShoppingCartIcon className="mt-[-4px]" fontSize="large" onClick={() => console.log('Go to cart')} />
+          {cartItemCount > 0 && (
+          <span className="text-green-700  absolute top-0 bg-green-600 text-black rounded-full w-4 h-4 flex items-center justify-center text-xs mt-[24px] ml-[20px]">{cartItemCount}</span>
+          )}
          </Link>
          <Link to="/add-product">
           <button className="mt-[4px] text-green-800"><AddIcon />
@@ -63,8 +74,7 @@ const Home = () => {
           </div>
         ))}
       </div>
-    </div>
-  
+    </div>  
   );
 };
 
