@@ -46,12 +46,12 @@ const Home = () => {
           )}
          </Link>
          <Link to="/add-product">
-          <button className="mt-[4px] text-green-800"><AddIcon />
+          <button className="mt-[4px] text-black-600"><AddIcon />
            Add Product
           </button>
          </Link> 
          <Link to="/Login">
-         <button className="text-red-800  hover:bg-red-200 font-bold py-2 px-4 rounded m-1 cursor-pointer mt-[-4px] mr-[-24px]" onClick={() => setLogout()}>  {/* onClick={() =>handleLogout()} */}
+         <button className="text-red-800 font-bold py-2 px-4 rounded m-1 cursor-pointer mt-[-4px] mr-[-24px]" onClick={() => setLogout()}>  {/* onClick={() =>handleLogout()} */}
           Logout
          </button>
          </Link>       
