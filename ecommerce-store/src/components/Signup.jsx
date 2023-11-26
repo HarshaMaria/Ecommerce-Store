@@ -23,7 +23,6 @@ export const Signup = (props) => {
         password,
         username,
       })
-      console.log("Registration successful", response.data);
       setSuccessMessage("Registration successful! You can now login.");
       setEmail("");
       setPassword("");
