@@ -71,39 +71,33 @@
 
 
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { setEmail, setPassword, setUserId, setShowMessage } from '../reducers/loginSlice';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../reducers/loginSlice';
 
 export const Login = (props) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const dispatch = useDispatch();
-  const email = useSelector((state) => state.login.email);
-  const password = useSelector((state) => state.login.password);
-  const userId = useSelector((state) => state.login.userId);
-  const showMessage = useSelector((state) => state.login.showMessage);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post('http://localhost:8081/v1/user/login', { email, password })
+    dispatch(loginUser({ email, password }))
       .then((response) => {
-        dispatch(setUserId(response.data));
-        props.onLoginSuccess();
-        localStorage.setItem('LoginId', response.data);
+        if (response.payload) {
+          props.onLoginSuccess();
+          localStorage.setItem('LoginId', response.payload);
+          navigate(`/home/${response.payload}`);
+        }
       })
       .catch((error) => {
         console.error(error);
-        dispatch(setShowMessage(true));
       });
   };
-
-  if (userId) {
-    navigate(`/home/${userId}`);
-  }
 
   return (
     <div className="flex items-center justify-center mb-20">
@@ -119,11 +113,11 @@ export const Login = (props) => {
             <div className="rounded-md shadow-sm -space-y-px">
               <div className="mb-4">
                 <label htmlFor="email-address" className="sr-only">Email address</label>
-                <input id="email-address" name="email" type="email" autoComplete="email" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="email@gmail.com" onChange={(e) => dispatch(setEmail(e.target.value))} />
+                <input id="email-address" name="email" type="email" autoComplete="email" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="email@gmail.com" onChange={(e) => setEmail(e.target.value)} />
               </div>
               <div>
                 <label htmlFor="password" className="sr-only">Password</label>
-                <input id="password" name="password" type="password" autoComplete="current-password" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="********" onChange={(e) => dispatch(setPassword(e.target.value))} />
+                <input id="password" name="password" type="password" autoComplete="current-password" required className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="********" onChange={(e) => setPassword(e.target.value)} />
               </div>
             </div>
             <div>
