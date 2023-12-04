@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { addNewGame } from '../reducers/gamesSlice';
 
 const AddProductForm = () => {
   const dispatch = useDispatch();
