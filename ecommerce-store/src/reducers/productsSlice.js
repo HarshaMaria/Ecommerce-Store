@@ -1,15 +1,24 @@
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-import { createSlice } from '@reduxjs/toolkit';
+export const addProduct = createAsyncThunk(
+  'products/addProduct',
+  async (product) => {
+    const response = await axios.post('http://localhost:8081/games', product);
+    return response.data;
+  }
+);
 
 const productsSlice = createSlice({
   name: 'products',
   initialState: [],
-  reducers: {
-    addProduct: (state, action) => {
-      state.push(action.payload); 
-    },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(addProduct.fulfilled, (state, action) => {
+        state.push(action.payload);
+      });
   },
 });
 
-export const { addProduct } = productsSlice.actions;
 export default productsSlice.reducer;
