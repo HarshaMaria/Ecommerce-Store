@@ -7,7 +7,6 @@ const Cart = () => {
   const dispatch = useDispatch();
   const { userId } = useParams();
   const cartItems = useSelector((state) => state.cart);
-  console.log(cartItems)
   const total = cartItems.reduce((total, item) => total + item.price * item.count, 0);
 
   useEffect(() => {
@@ -15,7 +14,6 @@ const Cart = () => {
   }, [dispatch, userId]);
 
   const handleRemoveFromCart = (item) => {
-    // console.log(item)
     dispatch(removeFromCart({ gameId: item.gameId, userId }));
     const cart = cartItems.filter(game => game.gameId !== item.gameId)
     
