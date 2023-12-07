@@ -46,7 +46,6 @@ const App = () => {
             <Route path="/home/:userId" element={<Home />} /> :
             <Route path="/Login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
           }
-
         </Routes>
       </div>
     </Router>
