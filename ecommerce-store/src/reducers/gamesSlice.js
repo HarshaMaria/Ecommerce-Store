@@ -12,7 +12,7 @@ export const fetchGameDetails = createAsyncThunk(
 export const fetchCartItems = createAsyncThunk(
   'games/fetchCartItems',
   async (userId) => {
-    const response = await axios.get(`http://localhost:8081/carts/${userId}`);
+    const response = await axios.get(`http://localhost:8081/carts?userId=${userId}`);
     return response.data;
   }
 );
