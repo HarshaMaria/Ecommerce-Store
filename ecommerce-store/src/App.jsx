@@ -34,7 +34,7 @@ const App = () => {
     <Router>
       <div className="container mx-auto p-4">
        <div className="w-full bg-gray p-2 mt-[-16px] shadow-md">
-        <h1 className="text-4xl font-bold mb-2 text-center mt-[4px]">Video Game Store</h1>
+        <h1 className="text-4xl font-bold mb-2 text-center mt-[4px] mb-[26px]">Video Game Store</h1>
        </div>
         <Routes>
           <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />

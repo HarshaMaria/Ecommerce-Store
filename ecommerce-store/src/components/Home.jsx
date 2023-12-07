@@ -27,7 +27,7 @@ const Home = () => {
   return (
     <div className="container mx-auto mt-[12px]">
       <div class="mt-[-48px] mb-[12px] mr-[48px]">
-       <div className="flex justify-end gap-4">
+       <div className="flex justify-end gap-4 mr-[-24px]">
          <Link to={`/cart/${userId}`}> 
           <ShoppingCartIcon className="mt-[-4px]" fontSize="large" onClick={() => console.log('Go to cart')} />
           {cartItemCount > 0 && (
