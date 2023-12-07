@@ -31,7 +31,7 @@ const Home = () => {
          <Link to={`/cart/${userId}`}> 
           <ShoppingCartIcon className="mt-[-4px]" fontSize="large" onClick={() => console.log('Go to cart')} />
           {cartItemCount > 0 && (
-          <span className="text-green-700  absolute top-0 bg-green-600 text-black rounded-full w-4 h-4 flex items-center justify-center text-xs mt-[24px] ml-[20px]">{cartItemCount}</span>
+          <span className="text-green-700  absolute top-0 bg-green-600 text-black rounded-full w-4 h-4 flex items-center justify-center text-xs mt-[40px] ml-[20px]">{cartItemCount}</span>
           )}
          </Link>
          <Link to="/add-product">
