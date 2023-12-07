@@ -29,7 +29,7 @@ const cartSlice = createSlice({
         return action.payload;
       })
       .addCase(removeFromCart.fulfilled, (state, action) => {
-        return state.filter(item => item.id !== action.payload.id);
+        return state.filter(item => item.gameId !== action.payload);
       });
   },
 });
