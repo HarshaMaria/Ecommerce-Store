@@ -4,7 +4,7 @@ import axios from 'axios';
 export const fetchGameDetails = createAsyncThunk(
   'games/fetchGameDetails',
   async (id) => {
-    const response = await axios.get(`http://localhost:8081/games/${id}`);
+    const response = await axios.get(`http://localhost:8081/v1/user/games/${id}`);
     return response.data;
   }
 );
@@ -12,7 +12,7 @@ export const fetchGameDetails = createAsyncThunk(
 export const fetchCartItems = createAsyncThunk(
   'games/fetchCartItems',
   async (userId) => {
-    const response = await axios.get(`http://localhost:8081/carts?userId=${userId}`);
+    const response = await axios.get(`http://localhost:8081/v1/user/carts?userId=${userId}`);
     return response.data;
   }
 );
@@ -21,7 +21,7 @@ export const addToCart = createAsyncThunk(
   'games/addToCart',
   async ({ gameId, userId }) => {
     try {
-      await axios.post(`http://localhost:8081/carts/${gameId}/create?userId=${userId}`);
+      await axios.post(`http://localhost:8081/v1/user/carts/${gameId}/create?userId=${userId}`);
       alert('Game added to cart!');
     } catch (error) {
       console.error('Error adding game to cart:', error);

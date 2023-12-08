@@ -4,7 +4,7 @@ import axios from 'axios';
 export const fetchCartItems = createAsyncThunk(
   'cart/fetchCartItems',
   async (userId) => {
-    const response = await axios.get(`http://localhost:8081/carts?userId=${userId}`);
+    const response = await axios.get(`http://localhost:8081/v1/user/carts?userId=${userId}`);
     return response.data;
   }
 );
@@ -12,7 +12,7 @@ export const fetchCartItems = createAsyncThunk(
 export const removeFromCart = createAsyncThunk(
   'cart/removeFromCart',
   async ({ gameId, userId }) => {
-    const response = await axios.delete(`http://localhost:8081/carts/${gameId}?userId=${userId}`);
+    const response = await axios.delete(`http://localhost:8081/v1/user/carts/${gameId}?userId=${userId}`);
     return gameId;
   }
 );

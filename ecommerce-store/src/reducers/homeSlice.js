@@ -4,7 +4,7 @@ import axios from 'axios';
 export const fetchGames = createAsyncThunk(
   'home/fetchGames',
   async () => {
-    const response = await axios.get('http://localhost:8081/games');
+    const response = await axios.get('http://localhost:8081/v1/user/games');
     return response.data;
   }
 );
@@ -12,7 +12,7 @@ export const fetchGames = createAsyncThunk(
 export const fetchCartItemsCount = createAsyncThunk(
   'home/fetchCartItemsCount',
   async (userId) => {
-    const response = await axios.get(`http://localhost:8081/carts/items?userId=${userId}`);
+    const response = await axios.get(`http://localhost:8081/v1/user/carts/items?userId=${userId}`);
     return response.data;
   }
 );
