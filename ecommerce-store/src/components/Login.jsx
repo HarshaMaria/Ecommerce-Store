@@ -4,21 +4,24 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../reducers/loginSlice';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 export const Login = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  const error = useSelector((state)=> state.login.error )
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(loginUser({ email, password }))
       .then((response) => {
-        if (response.payload) {
+        if (response.payload.token) {
           props.onLoginSuccess();
-          localStorage.setItem('LoginId', response.payload);
-          navigate(`/home/${response.payload}`);
+          console.log(response.payload.token)
+          // localStorage.setItem('LoginId', response.payload);
+          // navigate(`/home/${response.payload.token}`);
+          navigate(`/home/1`);
         }
       })
       .catch((error) => {
