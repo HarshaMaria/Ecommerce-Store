@@ -18,7 +18,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(fetchGames({token}));
     dispatch(fetchCartItemsCount(userId));
-  }, [userId, dispatch]);
+  }, [userId, token, dispatch]);
 
   const setLogout = () => {
     localStorage.removeItem('token');
@@ -41,7 +41,7 @@ const Home = () => {
            Add Product
           </button>
          </Link> 
-         <Link to="/Login">
+         <Link to="/">
          <button className="text-red-800 font-bold py-2 px-4 rounded m-1 cursor-pointer mt-[-4px] mr-[-24px]" onClick={() => setLogout()}>  {/* onClick={() =>handleLogout()} */}
           Logout
          </button>

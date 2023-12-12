@@ -18,7 +18,7 @@ export const Signup = (props) => {
         setErrorMessage("Please enter a valid email address ending with '.com'.");
         return; }
     try {
-      await dispatch(signup({ email, password, username }));
+      await dispatch(signup({ email, password, name:username }));
       setSuccessMessage("Registration successful! You can now login.");
       setEmail("");
       setPassword("");

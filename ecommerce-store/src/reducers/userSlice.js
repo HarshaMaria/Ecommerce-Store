@@ -3,12 +3,13 @@ import axios from 'axios';
 
 export const signup = createAsyncThunk(
   'user/signup',
-  async ({ email, password, username }, thunkAPI) => {
+  async ({ email, password, name }, thunkAPI) => {
+    console.log(email,password, name)
     try {
       const response = await axios.post('http://localhost:8081/v1/user/signup', {
         email,
         password,
-        username,
+        name,
       });
       return response.data;
     } catch (error) {
