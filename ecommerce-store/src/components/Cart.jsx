@@ -12,7 +12,6 @@ const Cart = () => {
 
   useEffect(() => {
     dispatch(fetchCartItems({token}));
-    console.log("hi")
   }, [dispatch, userId]);
 
   const handleRemoveFromCart = (item) => {

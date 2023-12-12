@@ -13,11 +13,10 @@ const Home = () => {
   const { userId } = useParams();
   const navigate = useNavigate();
   const token = useSelector((state) => state.login.user)
-  console.log(token)
 
   useEffect(() => {
     dispatch(fetchGames({token}));
-    dispatch(fetchCartItemsCount(userId));
+    dispatch(fetchCartItemsCount({token}));
   }, [userId, token, dispatch]);
 
   const setLogout = () => {

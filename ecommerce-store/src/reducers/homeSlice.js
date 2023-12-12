@@ -4,18 +4,17 @@ import axios from 'axios';
 export const fetchGames = createAsyncThunk(
   'home/fetchGames',
   async ({token}) => {
-    console.log(token)
     const response = await axios.get('http://localhost:8081/v1/games',{ headers:{
       Authorization: `Bearer ${token}`
-    }})
+    }});
     return response.data;
   }
 );
 
 export const fetchCartItemsCount = createAsyncThunk(
   'home/fetchCartItemsCount',
-  async (userId) => {
-    const response = await axios.get(`http://localhost:8081/v1/carts/items`,{ headers:{
+  async ({userId, token}) => {
+    const response = await axios.get(`http://localhost:8081/v1/carts/items`, { headers:{
       Authorization: `Bearer ${token}`
     }});
     return response.data;
