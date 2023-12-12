@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addProduct } from '../reducers/productsSlice';
 
 const AddProductForm = () => {
   const dispatch = useDispatch();
+  const token = useSelector((state) => state.login.user)
+
   const [formData, setFormData] = useState({
     name: '',
     description: '',
@@ -21,7 +23,7 @@ const AddProductForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addProduct(formData))
+    dispatch(addProduct({product:formData, token}))
       .then(() => {
         setFormData({
           name: '',
