@@ -3,16 +3,20 @@ import axios from 'axios';
 
 export const fetchCartItems = createAsyncThunk(
   'cart/fetchCartItems',
-  async (userId) => {
-    const response = await axios.get(`http://localhost:8081/v1/user/carts?userId=${userId}`);
+  async ({userId, token}) => {
+    const response = await axios.get(`http://localhost:8081/v1/carts`, { headers:{
+      Authorization: `Bearer ${token}`
+    }});
     return response.data;
   }
 );
 
 export const removeFromCart = createAsyncThunk(
   'cart/removeFromCart',
-  async ({ gameId, userId }) => {
-    const response = await axios.delete(`http://localhost:8081/v1/user/carts/${gameId}?userId=${userId}`);
+  async ({ gameId, userId, token }) => {
+    const response = await axios.delete(`http://localhost:8081/v1/carts/${gameId}`, { headers:{
+      Authorization: `Bearer ${token}`
+    }});
     return gameId;
   }
 );

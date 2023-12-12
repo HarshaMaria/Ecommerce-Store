@@ -3,25 +3,35 @@ import axios from 'axios';
 
 export const fetchGameDetails = createAsyncThunk(
   'games/fetchGameDetails',
-  async (id) => {
-    const response = await axios.get(`http://localhost:8081/v1/user/games/${id}`);
+  async ({id, token}) => {
+    const response = await axios.get(`http://localhost:8081/v1/games/${id}`, { headers:{
+      Authorization: `Bearer ${token}`
+    }});
+
     return response.data;
   }
 );
 
 export const fetchCartItems = createAsyncThunk(
   'games/fetchCartItems',
-  async (userId) => {
-    const response = await axios.get(`http://localhost:8081/v1/user/carts?userId=${userId}`);
+  async ({userId, token}) => {
+    const response = await axios.get(`http://localhost:8081/v1/carts`, { headers:{
+      Authorization: `Bearer ${token}`
+    }});
     return response.data;
   }
 );
 
 export const addToCart = createAsyncThunk(
   'games/addToCart',
-  async ({ gameId, userId }) => {
+  async ({ gameId, userId, token }) => {
+    console.log(token, gameId);
     try {
-      await axios.post(`http://localhost:8081/v1/user/carts/${gameId}/create?userId=${userId}`);
+      await axios.post(`http://localhost:8081/v1/carts/${gameId}/create`, null, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
       alert('Game added to cart!');
     } catch (error) {
       console.error('Error adding game to cart:', error);
@@ -37,6 +47,7 @@ const gamesSlice = createSlice({
     builder
       .addCase(fetchGameDetails.fulfilled, (state, action) => {
         state.gameDetails = action.payload;
+        console.log(action.payload)
       })
       .addCase(fetchCartItems.fulfilled, (state, action) => {
         state.cartItems = action.payload;

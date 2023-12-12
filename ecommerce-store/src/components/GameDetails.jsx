@@ -11,14 +11,16 @@ const GameDetails = () => {
   const { userId, id } = useParams();
   const game = useSelector((state) => state.games.gameDetails);
   const cartItems = useSelector((state) => state.games.cartItems);
+  const token = useSelector((state) => state.login.user)
 
+console.log(game)
   useEffect(() => {
-    dispatch(fetchGameDetails(id));
+    dispatch(fetchGameDetails({id,token}));
     dispatch(fetchCartItems(userId));
   }, [dispatch, id, userId]);
 
   const handleAddToCart = () => {
-    dispatch(addToCart({ gameId: id, userId }));
+    dispatch(addToCart({ gameId: id, userId,token }));
   };
 
   return (

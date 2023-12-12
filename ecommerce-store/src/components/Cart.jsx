@@ -8,9 +8,11 @@ const Cart = () => {
   const { userId } = useParams();
   const cartItems = useSelector((state) => state.cart);
   const total = cartItems.reduce((total, item) => total + item.price * item.count, 0);
+  const token = useSelector((state) => state.login.user)
 
   useEffect(() => {
-    dispatch(fetchCartItems(userId));
+    dispatch(fetchCartItems({token}));
+    console.log("hi")
   }, [dispatch, userId]);
 
   const handleRemoveFromCart = (item) => {

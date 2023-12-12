@@ -4,7 +4,9 @@ import axios from 'axios';
 export const addProduct = createAsyncThunk(
   'products/addProduct',
   async (product) => {
-    const response = await axios.post('http://localhost:8081/v1/user/games', product);
+    const response = await axios.post('http://localhost:8081/v1/games', { headers:{
+      Authorization: `Bearer ${token}`
+    }}, product);
     return response.data;
   }
 );

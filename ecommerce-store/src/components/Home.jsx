@@ -12,9 +12,11 @@ const Home = () => {
   const cartItemCount = useSelector((state) => state.home.cartItemCount);
   const { userId } = useParams();
   const navigate = useNavigate();
+  const token = useSelector((state) => state.login.user)
+  console.log(token)
 
   useEffect(() => {
-    dispatch(fetchGames());
+    dispatch(fetchGames({token}));
     dispatch(fetchCartItemsCount(userId));
   }, [userId, dispatch]);
 
@@ -48,7 +50,7 @@ const Home = () => {
       </div>
       <div className="grid grid-cols-4 gap-4 w-100 mb-0">
         {games && games.map((game,index) => (
-          <div key={game.id} className="border p-4 bg-orange-200 rounded-lg shadow-md">
+          <div key={game.gameId} className="border p-4 bg-orange-200 rounded-lg shadow-md">
            <div className="mx-auto w-[auto]">
             <h2 className="text-xl font-semibold">{game.name}</h2>
             <img src={Games[index].imageUrl} alt={game.name} className="my-2 w-32 h-32 object-cover" />

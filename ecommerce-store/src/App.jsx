@@ -42,10 +42,9 @@ const App = () => {
           <Route path="/add-product" element={<AddProductForm />} />
           <Route path="/cart/:userId" element={<Cart />} />
           <Route path="/Signup" element={<Signup />} />
-          {isLoggedIn ?
             <Route path="/home/:userId" element={<Home />} /> :
             <Route path="/Login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
-          }
+      
         </Routes>
       </div>
     </Router>
