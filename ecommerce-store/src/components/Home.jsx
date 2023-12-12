@@ -21,8 +21,8 @@ const Home = () => {
   }, [userId, dispatch]);
 
   const setLogout = () => {
-    localStorage.removeItem('LoginId');
-    window.location.reload(false);
+    localStorage.removeItem('token');
+    // window.location.reload(false);
     navigate('/login');
   };
 

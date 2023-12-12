@@ -16,7 +16,7 @@ const Cart = () => {
   }, [dispatch, userId]);
 
   const handleRemoveFromCart = (item) => {
-    dispatch(removeFromCart({ gameId: item.gameId, userId }));
+    dispatch(removeFromCart({ gameId: item.gameId, userId, token }));
     const cart = cartItems.filter(game => game.gameId !== item.gameId)
     
   };
