@@ -15,13 +15,21 @@ const Home = () => {
   const token = useSelector((state) => state.login.user)
 
   useEffect(() => {
+    if (!token) {
+      navigate('/login');
+    } else {
     dispatch(fetchGames({token}));
     dispatch(fetchCartItemsCount({token}));
+    }
   }, [userId, token, dispatch]);
 
   const setLogout = () => {
     localStorage.removeItem('token');
     // window.location.reload(false);
+    window.history.pushState(null, "", window.location.href);
+    window.onpopstate = function(event) {
+      window.history.go(1);
+    };
     navigate('/login');
   };
 

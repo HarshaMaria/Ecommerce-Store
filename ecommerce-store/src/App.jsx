@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
+import ProtectedRoute from './components/ProtectedRoute';
 import { Signup } from "./components/Signup";
 import { Login } from "./components/Login";
 import Home from "./components/Home";
@@ -43,7 +44,7 @@ const App = () => {
           <Route path="/cart/:userId" element={<Cart />} />
           <Route path="/Signup" element={<Signup />} />
             <Route path="/home/:userId" element={<Home />} /> :
-            <Route path="/Login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
+            <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />
       
         </Routes>
       </div>
