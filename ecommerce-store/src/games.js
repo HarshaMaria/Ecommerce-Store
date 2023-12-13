@@ -70,41 +70,7 @@ const games = [
       // price: 109.99,
       imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsOCWv5WEEk_SF7Sas7F49W3l5mFwAATVsKA&usqp=CAU",
     },
-    {
-      id: 10,
-      // name: "Fruit Ninja",
-      // description: "Fruit-Break Game",
-      // price: 119.99,
-      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6k1zqq_1JG23WiuD22KKAUb3rVGsMgKx5ZA&usqp=CAU",
-    },
-    {
-      id: 11,
-      // name: "Chain-Reaction",
-      // description: "",
-      // price: 129.99,
-      imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa3dYmpQbRpREsMet6PYzKplloauOSISzRAQ&usqp=CAU",
-    },
-    // {
-    //   id: 12,
-    //   // name: "Subway Surf",
-    //   // description: "Endless runner mobile Game",
-    //   // price: 79.99,
-    //   imageUrl: "https://assets-prd.ignimgs.com/2023/03/01/subwaysurfers-1677630205274.jpg",
-    // },
-    // {
-    //   id: 13,
-    //   // name: "Subway Surf",
-    //   // description: "Endless runner mobile Game",
-    //   // price: 79.99,
-    //   imageUrl: "https://assets-prd.ignimgs.com/2023/03/01/subwaysurfers-1677630205274.jpg",
-    // },
-    // {
-    //   id: 14,
-    //   // name: "Subway Surf",
-    //   // description: "Endless runner mobile Game",
-    //   // price: 79.99,
-    //   imageUrl: "https://assets-prd.ignimgs.com/2023/03/01/subwaysurfers-1677630205274.jpg",
-    // },
+    
 ];
   
 export default games;  

@@ -56,11 +56,13 @@ const Home = () => {
        </div> 
       </div>
       <div className="grid grid-cols-4 gap-4 w-100 mb-0">
-        {games && games.map((game,index) => (
+        {games && games.map((game,index) => {
+        console.log("games", game);
+        return(
           <div key={game.gameId} className="border p-4 bg-orange-200 rounded-lg shadow-md">
            <div className="mx-auto w-[auto]">
             <h2 className="text-xl font-semibold">{game.name}</h2>
-            <img src={Games[index].imageUrl} alt={game.name} className="my-2 w-32 h-32 object-cover" />
+            <img src={game?.imageUrl} alt={game.name} className="my-2 w-32 h-32 object-cover" />
             <p className="text-gray-700">{game.description}</p>
             <p className="text-gray-700">Price: ${game.price}</p>
             <Link to={`/game/${userId}/${game.gameId}`}>
@@ -70,7 +72,7 @@ const Home = () => {
             </Link>
            </div> 
           </div>
-        ))}
+        )})}
       </div>
     </div>  
   );
