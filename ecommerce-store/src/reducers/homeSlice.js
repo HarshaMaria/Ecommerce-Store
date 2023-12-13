@@ -13,7 +13,7 @@ export const fetchGames = createAsyncThunk(
 
 export const fetchCartItemsCount = createAsyncThunk(
   'home/fetchCartItemsCount',
-  async ({userId, token}) => {
+  async ({token}) => {
     const response = await axios.get(`http://localhost:8081/v1/carts/items`, { headers:{
       Authorization: `Bearer ${token}`
     }});

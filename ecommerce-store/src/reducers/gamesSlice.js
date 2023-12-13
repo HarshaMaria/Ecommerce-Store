@@ -14,7 +14,7 @@ export const fetchGameDetails = createAsyncThunk(
 
 export const fetchCartItems = createAsyncThunk(
   'games/fetchCartItems',
-  async ({userId, token}) => {
+  async ({token}) => {
     const response = await axios.get(`http://localhost:8081/v1/carts`, { headers:{
       Authorization: `Bearer ${token}`
     }});
