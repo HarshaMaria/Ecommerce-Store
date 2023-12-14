@@ -43,9 +43,7 @@ const App = () => {
           <Route path="/add-product" element={<AddProductForm />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/Signup" element={<Signup />} />
-            <Route path="/" element={<Home />} /> :
-            {/* <Route path="/login" element={<Login onLoginSuccess={handleLoginSuccess} />} /> */}
-      
+            <Route path="/" element={<Home />} />      
         </Routes>
       </div>
     </Router>
