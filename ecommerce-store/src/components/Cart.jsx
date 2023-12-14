@@ -27,7 +27,7 @@ const Cart = () => {
         {cartItems.length === 0 ? (
           <div>
             <p>Your Shopping cart is empty.</p>
-            <Link to={`/home/${userId}`}>
+            <Link to={"/home"}>
               <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">
                 Back to Home
               </button>
@@ -46,7 +46,7 @@ const Cart = () => {
               ))} 
             </ul>
             <p className="text-xl font-semibold mt-4">Total Price: ${total}</p>
-            <Link to={`/home/${userId}`}>
+            <Link to={"/home"}>
               <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2 flex">
                 Proceed to Checkout
               </button>

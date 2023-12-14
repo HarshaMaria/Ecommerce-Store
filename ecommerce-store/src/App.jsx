@@ -39,11 +39,11 @@ const App = () => {
        </div>
         <Routes>
           <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />
-          <Route path="/game/:userId/:id" element={<GameDetails />} />
+          <Route path="/game/:id" element={<GameDetails />} />
           <Route path="/add-product" element={<AddProductForm />} />
-          <Route path="/cart/:userId" element={<Cart />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/Signup" element={<Signup />} />
-            <Route path="/home/:userId" element={<Home />} /> :
+            <Route path="/home" element={<Home />} /> :
             <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />
       
         </Routes>

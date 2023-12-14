@@ -25,7 +25,6 @@ export const fetchCartItems = createAsyncThunk(
 export const addToCart = createAsyncThunk(
   'games/addToCart',
   async ({ gameId, userId, token }) => {
-    console.log(token, gameId);
     try {
       await axios.post(`http://localhost:8081/v1/carts/${gameId}/create`, null, {
         headers: {
@@ -47,7 +46,6 @@ const gamesSlice = createSlice({
     builder
       .addCase(fetchGameDetails.fulfilled, (state, action) => {
         state.gameDetails = action.payload;
-        console.log(action.payload)
       })
       .addCase(fetchCartItems.fulfilled, (state, action) => {
         state.cartItems = action.payload;

@@ -21,7 +21,7 @@ export const Login = (props) => {
           console.log(response.payload.token)
           // localStorage.setItem('LoginId', response.payload);
           // navigate(`/home/${response.payload.token}`);
-          navigate(`/home/1`);
+          navigate("/home");
         }
       })
       .catch((error) => {

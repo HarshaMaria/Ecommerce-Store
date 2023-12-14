@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import Games from './assets/games';
+import Games from '../assets/games';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AddIcon from '@mui/icons-material/Add';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,7 +13,6 @@ const GameDetails = () => {
   const cartItems = useSelector((state) => state.games.cartItems);
   const token = useSelector((state) => state.login.user)
 
-console.log(game)
   useEffect(() => {
     dispatch(fetchGameDetails({id,token}));
     dispatch(fetchCartItems(userId));
@@ -33,12 +32,12 @@ console.log(game)
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex mt-2" onClick={handleAddToCart}>
           Add to Cart
         </button>
-        <Link to={`/cart/${userId}`}>
+        <Link to={"/cart"}>
           <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex mt-2">
             View Cart
           </button>
         </Link>
-        <Link to={`/home/${userId}`}>
+        <Link to={"/home"}>
           <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2">
             Home
           </button>
