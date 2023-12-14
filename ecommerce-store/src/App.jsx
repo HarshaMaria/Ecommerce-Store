@@ -38,13 +38,13 @@ const App = () => {
         <h1 className="text-4xl font-bold mb-2 text-center mt-[4px] mb-[26px]">Video Game Store</h1>
        </div>
         <Routes>
-          <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />
+          <Route path="/login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
           <Route path="/game/:id" element={<GameDetails />} />
           <Route path="/add-product" element={<AddProductForm />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/Signup" element={<Signup />} />
-            <Route path="/home" element={<Home />} /> :
-            <Route path="/" element={<Login onLoginSuccess={handleLoginSuccess} />} />
+            <Route path="/" element={<Home />} /> :
+            {/* <Route path="/login" element={<Login onLoginSuccess={handleLoginSuccess} />} /> */}
       
         </Routes>
       </div>

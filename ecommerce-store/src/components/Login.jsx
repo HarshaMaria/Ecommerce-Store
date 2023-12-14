@@ -57,7 +57,7 @@ export const Login = (props) => {
             </div>
           </form>
           <div className="text-center">
-            <Link to="Signup">
+            <Link to="/Signup">
               <button className="mt-2 w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">              {/* onClick={() => props.onFormSwitch('register')} */}
                 Don't have an account? Register here.
               </button>

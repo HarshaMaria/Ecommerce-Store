@@ -68,11 +68,11 @@ Register
 <p className="mt-2 text-center text-sm text-red-600">{errorMessage}</p>
  )}
  <div className="text-center">
- <Link to = "/">
- <button className="mt-2 w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" >
-Already have an account? <br /> Login here.
-          </button>
-          </Link>
+   <Link to = "/login">
+    <button className="mt-2 w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500" >
+      Already have an account? <br /> Login here.
+    </button>
+   </Link>
           <h1>{id}</h1>
         </div>
       </div>

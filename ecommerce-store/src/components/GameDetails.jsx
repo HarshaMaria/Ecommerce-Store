@@ -37,7 +37,7 @@ const GameDetails = () => {
             View Cart
           </button>
         </Link>
-        <Link to={"/home"}>
+        <Link to={"/"}>
           <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2">
             Home
           </button>
