@@ -25,10 +25,9 @@ const Home = () => {
 
   const setLogout = () => {
     localStorage.removeItem('token');
-    // window.location.reload(false);
     window.history.pushState(null, "", window.location.href);
     window.onpopstate = function(event) {
-      window.history.go(1);
+    window.history.go(1);
     };
     navigate('/login');
   };
