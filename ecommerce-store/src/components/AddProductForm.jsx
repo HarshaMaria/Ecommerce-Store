@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { addProduct } from '../reducers/productsSlice';
 
 const AddProductForm = () => {
@@ -89,6 +90,11 @@ const AddProductForm = () => {
           <button type="submit" className="bg-blue-500 hover:bg-green-500 text-white font-bold py-2 px-4 rounded">
             Add Product
           </button>
+        <Link to={"/"}>
+          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mt-2 flex">
+            Home
+          </button>
+        </Link>
         </form>
       </div>
     </div> 
