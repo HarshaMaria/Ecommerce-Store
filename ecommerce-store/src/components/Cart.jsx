@@ -8,7 +8,7 @@ const Cart = () => {
   const { userId } = useParams();
   const cartItems = useSelector((state) => state.cart);
   const total = cartItems.reduce((total, item) => total + item.price * item.count, 0);
-  const token = useSelector((state) => state.login.user)
+  const token = localStorage?.getItem('token') 
 
   useEffect(() => {
     dispatch(fetchCartItems({token}));

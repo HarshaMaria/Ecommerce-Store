@@ -11,7 +11,7 @@ const GameDetails = () => {
   const { userId, id } = useParams();
   const game = useSelector((state) => state.games.gameDetails);
   const cartItems = useSelector((state) => state.games.cartItems);
-  const token = useSelector((state) => state.login.user)
+  const token = localStorage?.getItem('token')                                                                                                                                 // const token = useSelector((state) => state.login.user)
 
   useEffect(() => {
     dispatch(fetchGameDetails({id,token}));

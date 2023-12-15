@@ -5,11 +5,8 @@ const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 export const loginUser = createAsyncThunk(
   'login/loginUser',
   async ({ email, password }) => {
-    console.log(email, password)
     try {
       const response = await axios.post(`${BASE_URL}/v1/user/login`, { email, password });
-      console.log(response.data)
-
       return response.data;
     } catch (error) {
       return error;

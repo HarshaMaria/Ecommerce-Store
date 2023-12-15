@@ -12,7 +12,7 @@ const Home = () => {
   const cartItemCount = useSelector((state) => state.home.cartItemCount);
   const { userId } = useParams();
   const navigate = useNavigate();
-  const token = useSelector((state) => state.login.user)
+  const token = localStorage?.getItem('token')
 
   useEffect(() => {
     if (!token) {
