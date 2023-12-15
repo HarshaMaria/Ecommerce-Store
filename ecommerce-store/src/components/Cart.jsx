@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { fetchCartItems, removeFromCart } from '../reducers/cartSlice';
 
 const Cart = () => {
@@ -9,9 +9,15 @@ const Cart = () => {
   const cartItems = useSelector((state) => state.cart);
   const total = cartItems.reduce((total, item) => total + item.price * item.count, 0);
   const token = localStorage?.getItem('token') 
+  const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(fetchCartItems({token}));
+    if(!token){
+      navigate('/login');
+    }
+    else {
+      dispatch(fetchCartItems({token}));
+    }
   }, [dispatch, userId]);
 
   const handleRemoveFromCart = (item) => {

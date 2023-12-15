@@ -1,18 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { addProduct } from '../reducers/productsSlice';
 
 const AddProductForm = () => {
   const dispatch = useDispatch();
-  const token = useSelector((state) => state.login.user)
-
+  const navigate = useNavigate();
+  const token = localStorage?.getItem('token')  
   const [formData, setFormData] = useState({
     name: '',
     description: '',
     price: '',
     imageUrl: '',
   });
+
+  useEffect(() => {
+    if(!token){
+      navigate('/login');
+    }
+  }, [dispatch, navigate, token]);  
 
   const handleChange = (e) => {
     const { name, value } = e.target;

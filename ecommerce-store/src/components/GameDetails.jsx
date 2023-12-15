@@ -1,21 +1,29 @@
 import React, { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import Games from '../assets/games';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AddIcon from '@mui/icons-material/Add';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchGameDetails, fetchCartItems, addToCart } from '../reducers/gamesSlice';
 
+
 const GameDetails = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { userId, id } = useParams();
   const game = useSelector((state) => state.games.gameDetails);
   const cartItems = useSelector((state) => state.games.cartItems);
-  const token = localStorage?.getItem('token')                                                                                                                                 // const token = useSelector((state) => state.login.user)
+  const token = localStorage?.getItem('token')   
+  
 
   useEffect(() => {
-    dispatch(fetchGameDetails({id,token}));
-    dispatch(fetchCartItems(userId));
+    if(!token){
+      navigate('/login');
+    }
+    else {
+      dispatch(fetchGameDetails({id,token}));
+      dispatch(fetchCartItems(userId));
+    }
   }, [dispatch, id, userId]);
 
   const handleAddToCart = () => {
