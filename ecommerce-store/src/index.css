@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 body{
-    /* background-image: url("https://img.freepik.com/free-vector/battle-arena-magic-altar-with-runes-blue-sky_107791-16120.jpg?size=626&ext=jpg&ga=GA1.1.1468780805.1700627328&semt=ais");
+    background-image: url("https://img.freepik.com/free-vector/nature-roadside-background-scene_1308-131779.jpg?w=1060&t=st=1702892980~exp=1702893580~hmac=5e688167b87f5e697cb3c8fc26742f0e039abf6a738c81d9da4951fb1c4508ee");
     background-repeat: no-repeat;
-    background-size: cover; */
+    background-size: cover;
     /* background-color: lightgray; */
 }

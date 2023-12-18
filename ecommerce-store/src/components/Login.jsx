@@ -28,8 +28,8 @@ export const Login = (props) => {
 
   return (
     <div className="flex items-center justify-center mb-20">
-      <div className="min-screen flex items-center justify-center bg-gradient-to-r from-gray-400 to-red-500 py-8 w-[520px] sm:px-6 lg:px-8 mt-12">
-        <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-lg shadow-md">
+      <div className="min-screen flex items-center justify-center py-8 w-[520px] sm:px-6 lg:px-8 mt-12">
+        <div className="max-w-md w-full space-y-8 bg-white p-10 rounded-lg shadow-md  bg-gradient-to-r from-gray-400 to-red-500">
           <div>
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
               Login
