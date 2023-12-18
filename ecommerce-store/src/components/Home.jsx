@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import Games from '../assets/games';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AddIcon from '@mui/icons-material/Add';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,10 +24,6 @@ const Home = () => {
 
   const setLogout = () => {
     localStorage.removeItem('token');
-    window.history.pushState(null, "", window.location.href);
-    window.onpopstate = function(event) {
-    window.history.go(1);
-    };
     navigate('/login');
   };
 

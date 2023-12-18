@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body{
-    background-image: url("https://img.freepik.com/free-vector/battle-arena-magic-altar-with-runes-blue-sky_107791-16120.jpg?size=626&ext=jpg&ga=GA1.1.1468780805.1700627328&semt=ais");
+    /* background-image: url("https://img.freepik.com/free-vector/battle-arena-magic-altar-with-runes-blue-sky_107791-16120.jpg?size=626&ext=jpg&ga=GA1.1.1468780805.1700627328&semt=ais");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+    /* background-color: lightgray; */
 }
