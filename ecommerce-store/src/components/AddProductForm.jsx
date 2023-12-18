@@ -12,6 +12,7 @@ const AddProductForm = () => {
     description: '',
     price: '',
     imageUrl: '',
+    count: 1,
   });
 
   useEffect(() => {
