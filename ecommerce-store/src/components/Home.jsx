@@ -58,7 +58,7 @@ const Home = () => {
           <div key={game.gameId} className="border p-4 bg-pink-200 rounded-lg shadow-md">
            <div className="mx-auto w-[auto] ml-[8px]">
             <h2 className="text-xl font-semibold">{game.name}</h2>
-            <img src={game?.imageUrl} alt={game.name} className="my-2 w-34 h-32 object-cover" />
+            <img src={game?.imageUrl} alt={game.name} className="my-2 w-32 h-32 object-cover" />
             <p className="text-gray-700">{game.description}</p>
             <p className="text-gray-700">Price: ${game.price}</p>
             <Link to={`/game/${game.gameId}`}>
