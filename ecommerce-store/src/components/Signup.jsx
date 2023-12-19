@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { signup } from "../reducers/userSlice";
 
-export const Signup = (props) => {
+export const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
